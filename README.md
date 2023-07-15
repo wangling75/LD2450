@@ -1,6 +1,6 @@
 ESPHome [LD2450](https://aliexpress.com/item/1005005584857890.html) mmWave Radar Sensor Custom Component
 
-https://ae01.alicdn.com/kf/S7be2047a5aa647a4b34e61f1c6df960e4/Radar-Sensor-Module-HLK-LD2450-Human-Presence-Motion-Radar-Sensor-Module-Non-Contact-Monitoring-Detector-Sensor.jpg
+![LD2450](https://ae01.alicdn.com/kf/S7be2047a5aa647a4b34e61f1c6df960e4/Radar-Sensor-Module-HLK-LD2450-Human-Presence-Motion-Radar-Sensor-Module-Non-Contact-Monitoring-Detector-Sensor.jpg)
 
 Edited yaml from: https://github.com/tsunglung/esphome-ld2450 for ESP32 to use the internal pull up resistors
 Added Presence Sensor and Number of detected targets
