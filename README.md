@@ -1,5 +1,8 @@
 ESPHome LD2450 mmWave Radar Sensor Custom Component
 
+Edited yaml from: https://github.com/tsunglung/esphome-ld2450 for ESP32 to use the internal pull up resistors
+Added Presence Sensor and Number of detected targets
+
 ## Installation
 Set wifi_ssid and wifi_password in your esphome's secrets.yaml first
 
@@ -7,14 +10,12 @@ Set wifi_ssid and wifi_password in your esphome's secrets.yaml first
 2. Create new device with the yaml in this repository
 
 ## Wiring
-ESP8266  | | LD2450
+ESP32  | | LD2450
 ---------|-|-------|
 5V      |<->| VCC
 GND     |<->| GND
-TX      |<->| RX
-RX      |<->| TX
+GPIO22  |<->| RX
+GPIO21  |<->| TX
 
 ## Notice
-1. The RX, TX need pull-up resister.
-2. Need to upgrade to firmware 1.1.230605 (recommended)
-3. Use hardware serial if use ESP8266.
+1. Need to upgrade to firmware 1.1.230605 (recommended)
