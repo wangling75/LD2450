@@ -18,4 +18,4 @@ GPIO22  |<->| RX
 GPIO21  |<->| TX
 
 ## Notice
-1. Need to upgrade to firmware 1.2.23051810 - Bluetooth OTA available through (HLKRadarTool)[https://www.pgyer.com/Lq8p] app
+1. Need to upgrade to firmware 1.2.23051810 - Bluetooth OTA available through [HLKRadarTool](https://www.pgyer.com/Lq8p) app
