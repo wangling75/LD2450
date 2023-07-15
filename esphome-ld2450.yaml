@@ -8,8 +8,10 @@ esphome:
   includes:
     - custom_components/ld2450_uart.h
 
-esp8266:
-  board: esp01_1m
+esp32:
+  board: wemos_d1_mini32
+  framework:
+    type: arduino
 
 wifi:
   ssid: !secret wifi_ssid
@@ -30,8 +32,14 @@ ota:
 
 uart:
   id: uart_ld2450
-  tx_pin: TX
-  rx_pin: RX
+  tx_pin: 
+    number: GPIO22
+    mode:
+      pullup: true
+  rx_pin: 
+    number: GPIO21
+    mode:
+      pullup: true
   baud_rate: 256000
   parity: NONE
   stop_bits: 1
@@ -45,7 +53,19 @@ custom_component:
     components:
       - id: ld2450
 
-
+binary_sensor:
+  - platform: template
+    name: "Presence Detected"
+    device_class: occupancy
+    lambda: |-
+      if (id(target1).state > 0 
+            or id(target2).state > 0
+            or id(target3).state > 0) {
+        return true;
+      } else {
+        return false;
+      }
+      
 sensor:
   - platform: custom
     lambda: |-
@@ -103,3 +123,18 @@ sensor:
         unit_of_measurement: "cm"
         accuracy_decimals: 0
         icon: mdi:map-marker-down
+  - platform: template
+    name: "Targets Detected"
+    update_interval: 1s
+    lambda: |-
+      int num = 0;
+      if (id(target1).state > 0) {
+        num += 1;
+      }
+      if (id(target2).state > 0) {
+        num += 1;
+      }
+      if (id(target3).state > 0) {
+        num += 1;
+      }
+      return num;
