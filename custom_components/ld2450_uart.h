@@ -24,6 +24,7 @@ public:
   Sensor *target3Speed = new Sensor();
   Sensor *target3X = new Sensor();
   Sensor *target3Y = new Sensor();
+  Sensor *targets = new Sensor();
 
   uint32_t lastPeriodicMillis = millis();
 
@@ -32,7 +33,7 @@ public:
   }
 
   void reportTargetInfo(int target, char *raw) {
-    int16_t newX, newY, newSpeed;
+    int16_t newX, newY, newSpeed, sum;
     uint16_t newResolution;
 
     ESP_LOGV(TAG, "Will reporting taget %d", target);
@@ -110,6 +111,19 @@ public:
         if (target3Resolution->get_state() != newResolution)
           target3Resolution->publish_state(newResolution);
         break;
+    }
+    sum = 0;
+    if (target1Resolution->get_state() > 0){
+      sum+=1;
+    }
+    if (target2Resolution->get_state() > 0){
+      sum+=1;
+    }
+    if (target3Resolution->get_state() > 0){
+      sum+=1;
+    }
+    if (targets->get_state() != sum){
+      targets->publish_state(sum);
     }
   }
 
