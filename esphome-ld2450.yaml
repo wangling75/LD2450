@@ -58,9 +58,7 @@ binary_sensor:
     name: "Presence Detected"
     device_class: occupancy
     lambda: |-
-      if (id(target1).state > 0 
-            or id(target2).state > 0
-            or id(target3).state > 0) {
+      if (id(targets_sum).state > 0 ) {
         return true;
       } else {
         return false;
@@ -73,6 +71,7 @@ sensor:
       return {uart_component->target1Resolution, uart_component->target1Speed, uart_component->target1X, uart_component->target1Y,
               uart_component->target2Resolution, uart_component->target2Speed, uart_component->target2X, uart_component->target2Y,
               uart_component->target3Resolution, uart_component->target3Speed, uart_component->target3X, uart_component->target3Y,
+              uart_component->targets
       };
     sensors:
       - name: "Target1 Resolution"
@@ -126,18 +125,7 @@ sensor:
         unit_of_measurement: "cm"
         accuracy_decimals: 0
         icon: mdi:map-marker-down
-  - platform: template
-    name: "Targets Detected"
-    update_interval: 1s
-    lambda: |-
-      int num = 0;
-      if (id(target1).state > 0) {
-        num += 1;
-      }
-      if (id(target2).state > 0) {
-        num += 1;
-      }
-      if (id(target3).state > 0) {
-        num += 1;
-      }
-      return num;
+      - name: "Targets Sum"
+        accuracy_decimals: 0
+        icon: mdi:map-marker-down
+        id: targets_sum
