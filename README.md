@@ -21,6 +21,7 @@ GPIO21  |<->| TX
 
 ## Dashboard Card
 ![image](https://github.com/Chreece/LD2450-ESPHome/assets/68458228/1b16a4a3-5386-4dca-a77c-c7864f38d9fe)
+
 Copy the code from dashboard_template.yaml into a new empty card in Home Assistant to grab all the LD2450 targets and present them in seperate cards (for title, the area of the device is used)
 
 ## Notice
