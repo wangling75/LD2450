@@ -26,4 +26,4 @@ From HACS download the auto-entities, layout-card and Ploty Graph Card (all Fron
 Copy the code from dashboard_example.yaml into a new empty card in Home Assistant to grab all the LD2450 targets and present them in seperate cards (for title, the area of the device is used)
 
 ## Notice
-1. Need to upgrade to firmware 1.2.23051810 - Bluetooth OTA available through [HLKRadarTool](https://www.pgyer.com/Lq8p) app
+1. Need to upgrade to firmware 2.04.23101915 - Bluetooth OTA available through [HLKRadarTool](https://www.pgyer.com/Lq8p) app
