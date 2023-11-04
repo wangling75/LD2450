@@ -9,7 +9,7 @@ Added Presence Sensor and Number of detected targets
 Set wifi_ssid and wifi_password in your esphome's secrets.yaml first
 
 1. Place ld2450_uart.h into the custom_components of your esphome configuration folder
-2. Create new device with the yaml in this repository
+2. Create new device with the esphome-ld2450.yaml from this repository
 
 ## Wiring
 ESP32  | | LD2450
@@ -19,5 +19,11 @@ GND     |<->| GND
 GPIO22  |<->| RX
 GPIO21  |<->| TX
 
+## Dashboard Card
+![image](https://github.com/Chreece/LD2450-ESPHome/assets/68458228/1b16a4a3-5386-4dca-a77c-c7864f38d9fe)
+
+From HACS download the auto-entities, layout-card and Ploty Graph Card (all Frontend integrations)
+Copy the code from dashboard_example.yaml into a new empty card in Home Assistant to grab all the LD2450 targets and present them in seperate cards (for title, the area of the device is used)
+
 ## Notice
-1. Need to upgrade to firmware 1.2.23051810 - Bluetooth OTA available through [HLKRadarTool](https://www.pgyer.com/Lq8p) app
+1. Need to upgrade to firmware 2.04.23101915 - Bluetooth OTA available through [HLKRadarTool](https://www.pgyer.com/Lq8p) app
