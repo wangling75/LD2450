@@ -147,7 +147,7 @@ switch:
       - uart.write: [0xFD, 0xFC, 0xFB, 0xFA, 0x02, 0x00, 0xFE, 0x00, 0x04, 0x03, 0x02, 0x01]
   - platform: template
     name: "${device_name} Bluetooth"
-    id: multi_target
+    id: bluetooth_switch
     entity_category: diagnostic
     optimistic: true
     restore_mode: "RESTORE_DEFAULT_ON"
