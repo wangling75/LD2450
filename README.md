@@ -1,3 +1,5 @@
+## This repo will no longer be maintained since there is a [PR](https://github.com/esphome/esphome/pull/5674) for native support in esphome and a better [library](https://github.com/uncle-yura/esphome-ld2450) till the PR to be merged
+
 ESPHome [LD2450](https://aliexpress.com/item/1005005584857890.html) mmWave Radar Sensor Custom Component
 
 ![https://aliexpress.com/item/1005005584857890.html](https://ae01.alicdn.com/kf/S7be2047a5aa647a4b34e61f1c6df960e4/Radar-Sensor-Module-HLK-LD2450-Human-Presence-Motion-Radar-Sensor-Module-Non-Contact-Monitoring-Detector-Sensor.jpg)
